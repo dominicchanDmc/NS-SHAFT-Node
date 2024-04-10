@@ -1,18 +1,18 @@
-import PlayerObj from "./player.js"
+// import PlayerObj from "./player.js"
 
 //--------param
 const statusSt = 'Start';
 
 const bgpic=new Image();
-		bgpic.src="img/bg.jpg";
+		bgpic.src="./assets/bg.jpg";
 const toppic=new Image();
-		toppic.src="img/top.jpg";
+		// toppic.src="img/top.jpg";
 const stand=new Image();
-		stand.src="img/1.png";
+		// stand.src="img/1.png";
 let canvasB,ctxB,canvasM,ctxM;
 
 let gameStatus = statusSt;
-let player = new PlayerObj();
+// let player = new PlayerObj();
 
 //-------------------------
 function render() {
