@@ -6,9 +6,9 @@ const statusSt = 'Start';
 const bgpic=new Image();
 		bgpic.src="./assets/bg.jpg";
 const toppic=new Image();
-		// toppic.src="img/top.jpg";
+		 toppic.src="./assets/top.jpg";
 const stand=new Image();
-		// stand.src="img/1.png";
+		 stand.src="./assets/1.png";
 let canvasB,ctxB,canvasM,ctxM;
 
 let gameStatus = statusSt;
