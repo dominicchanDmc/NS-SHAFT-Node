@@ -1,4 +1,4 @@
-// import PlayerObj from "./player.js"
+import PlayerObj from "./script/player.js"
 
 //--------param
 const statusSt = 'Start';
@@ -12,7 +12,7 @@ const stand=new Image();
 let canvasB,ctxB,canvasM,ctxM;
 
 let gameStatus = statusSt;
-// let player = new PlayerObj();
+let player = new PlayerObj();
 
 //-------------------------
 function render() {
@@ -27,7 +27,8 @@ function render() {
 
     if(gameStatus == statusSt ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
-        if(player.state == 0 ) ctxB.drawImage(stand,player.x,player.y,player.width,player.height);
+        if(player.state == 0 ) 
+            ctxB.drawImage(stand,player.x,player.y,player.width,player.height);
 
         ctxB.drawImage(toppic,0,0,canvasB.width,40);
     }
