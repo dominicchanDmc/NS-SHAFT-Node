@@ -1,4 +1,5 @@
 import PlayerObj from "./script/player.js"
+import BlockObj from "./script/block.js";
 
 //--------param
 const statusSt = 'Start';
@@ -16,17 +17,16 @@ let canvasB,ctxB,canvasM,ctxM;
 let gameStatus = statusSt;
 let player = new PlayerObj();
 
+canvasB = document.getElementById('canvasBoard');
+ctxB = canvasB.getContext('2d');
+canvasM = document.getElementById('canvasMove'); 
+ctxM = canvasM.getContext('2d');
+canvasB.width = 480;
+canvasB.height = 740;
+canvasM.width = 480;
+canvasM.height = 300;
 //-------------------------
 function render() {
-     canvasB = document.getElementById('canvasBoard');
-     ctxB = canvasB.getContext('2d');
-     canvasM = document.getElementById('canvasMove'); 
-     ctxM = canvasM.getContext('2d');
-     canvasB.width = 480;
-     canvasB.height = 740;
-     canvasM.width = 480;
-     canvasM.height = 300;
-
     if(gameStatus == statusSt ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
         if(player.state == 0 ) 
@@ -53,14 +53,14 @@ function run() {
 }
 
 let Array = [];
-Array[0] = new block(150,600);
-for( i = 1 ; i < 10 ; i++){
-    let r = Math.random() * canvas.width-100;
+Array[0] = new BlockObj(150,600);
+for( let i = 1 ; i < 10 ; i++){
+    let r = Math.random() * canvasB.width-100;
     let de = (Math.random() * 10+10+i*4)*40 ;
     /// Avoid Overlapping
     while(1)
     {
-        r = Math.random() * canvas.width-100;
+        r = Math.random() * canvasB.width-100;
         de = (Math.random() * 10+10+i*4)*40 ;
         let overlap = false;
         for(j = 0 ; j < i ; j++)
@@ -76,10 +76,10 @@ for( i = 1 ; i < 10 ; i++){
         if(!overlap) break;
     }
     /////////////////////////////////////
-    if(i == 3 || i == 9 ) Array[i] = new s_block(r,de);
-    else if ( i == 2 || i == 7) Array[i] = new k_block(r,de);
-    else if ( i == 5 ) Array[i] = new j_block(r,de);
-    else Array[i] = new block(r,de);
+    // if(i == 3 || i == 9 ) Array[i] = new s_block(r,de);
+    // else if ( i == 2 || i == 7) Array[i] = new k_block(r,de);
+    // else if ( i == 5 ) Array[i] = new j_block(r,de);
+    // else Array[i] = new BlockObj(r,de);
 }
 
 var time = Date.now();
