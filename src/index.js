@@ -101,10 +101,6 @@ for( let i = 1 ; i < 10 ; i++){
         if(!overlap) break;
     }
     /////////////////////////////////////
-    // if(i == 3 || i == 9 ) Array[i] = new s_block(r,de);
-    // else if ( i == 2 || i == 7) Array[i] = new k_block(r,de);
-    // else if ( i == 5 ) Array[i] = new j_block(r,de);
-    // else Array[i] = new BlockObj(r,de);
     if(i == 3 || i == 9 ) Array[i] = new BlockObj(r,de);
     else if ( i == 2 || i == 7) Array[i] = new BlockObj(r,de);
     else if ( i == 5 ) Array[i] = new J_BlockObj(r,de);
