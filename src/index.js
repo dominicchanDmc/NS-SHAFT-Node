@@ -1,6 +1,7 @@
 import PlayerObj from "./script/player.js"
 import BlockObj from "./script/block.js";
 import J_BlockObj from "./script/j_Block.js";
+import D_BlockObj from "./script/d_Block.js";
 
 //--------param
 const statusSt = 'Start';
