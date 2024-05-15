@@ -66,7 +66,100 @@ function render() {
     }
     
 }
-
+function update(mod) {
+    if(game == 1){
+    if (37 in keysDown && man.x >= 0 && man.x < (canvas.width-40) ) {
+        man.x -= man.speed * mod;
+        man.state = 1;
+        if(man.x <= 0) man.x = 1;
+    }
+    else if (39 in keysDown && man.x >= 0 && man.x < (canvas.width-40)) {
+        man.x += man.speed * mod;
+        man.state = 2;
+        if(man.x >= (canvas.width-40) ) man.x = canvas.width-41;
+    }else if(mouse == 0 && tou == 0)man.state = 0;
+    for(i = 0 ; i < 10; i++){
+        Array[i].y -= speed;
+    }
+    for( i = 0 ; i < 10 ; i++){
+        if((man.y <= Array[i].y  &&man.y >= Array[i].y -40 )&& man.x >Array[i].x-20 && man.x < Array[i].x +150){
+            up =1;
+            m_y = i;
+            break;
+        }
+        else up = 0;
+    }	
+    if(up == 1){
+        man.y = Array[m_y].y-40;
+        if(Array[m_y].mod == 1) {
+            if(flag == 0 &&man.life< fulllife ) man.life++;
+            flag = 1;
+            man.speed=ms/3;
+        }else if (Array[m_y].mod == 2){
+            if(flag == 0)man.life -= 5;
+            flag = 1;
+            man.speed = ms;
+        }else if(Array[m_y].mod == 3){
+            if(flag == 0 &&man.life< fulllife ) man.life++;
+            man.speed = ms*1.5;
+            man.y -= 100;
+            flag = 1;
+        }
+        else {
+            if(flag == 0 &&man.life< fulllife ) man.life++;
+            man.speed =ms;
+            flag = 1;
+        }
+    }	
+    else  {
+        if( man.y<35 )
+        {
+            man.life -= 5;
+            man.y = 35;
+        }
+        man.y += 10;
+        man.speed =ms;
+        flag = 0;
+    }
+    if(man.y > canvas.height || man.life <=0) {
+        game = 0;
+        end = 1;
+    }
+    //console.log(flag+"  "+man.life + "   " + man.speed);
+    if(man.stair > 95) speed = 15;
+    else if(man.stair > 80) speed = 14;
+    else if(man.stair > 65) speed = 12;
+    else if(man.stair > 50) speed = 10;
+    else if(man.stair > 35) speed = 9;
+    else if(man.stair > 20) speed = 8;
+    for(i = 0 ; i < 10 ; i++){
+        if( Array[i].y <= 30 ){
+            Array[i].y = canvas.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
+            Array[i].x = Math.random() * canvas.width-100;
+            /// Avoid Overlapping
+            while(1)
+            {
+                Array[i].y = canvas.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
+                Array[i].x = Math.random() * canvas.width-100;
+                var overlap = false;
+                for(j = 0 ; j < 10 ; j++)
+                {
+                    if( i==j ) continue;
+                    if( (Math.abs(Array[i].x-Array[j].x)<=200) && (Math.abs(Array[i].y-Array[j].y)<=60)  )
+                    {
+                        overlap = true;
+                        //console.log("overlap!");
+                        break;
+                    }
+                }
+                //console.log(overlap);
+                if(!overlap) break;
+            }
+            /////////////////////////////////////
+        }	
+    }
+    }
+}
 function run() {
    // update((Date.now() - time) / 1000);
     render();
