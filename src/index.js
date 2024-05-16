@@ -21,23 +21,20 @@ const leftpic=new Image();
 const rightpic=new Image();
 		rightpic.src="./assets/right.png";
 let canvasB,ctxB,canvasM,ctxM;
-
-
+canvasB = document.getElementById('canvasBoard');
+ctxB = canvasB.getContext('2d');
+canvasM = document.getElementById('canvasMove'); 
+ctxM = canvasM.getContext('2d');
+canvasB.width = 480;
+canvasB.height = 740;
+canvasM.width = 480;
+canvasM.height = 300;
 
 let gameStatus = statusSt;
 let player = new PlayerObj();
 
-
 //-------------------------
 function render() {
-    canvasB = document.getElementById('canvasBoard');
-    ctxB = canvasB.getContext('2d');
-    canvasM = document.getElementById('canvasMove'); 
-    ctxM = canvasM.getContext('2d');
-    canvasB.width = 480;
-    canvasB.height = 740;
-    canvasM.width = 480;
-    canvasM.height = 300;
     if(gameStatus == statusSt ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
         if(player.state == 0 ) 
@@ -200,3 +197,29 @@ for( let i = 1 ; i < 10 ; i++){
     else if ( i == 5 ) Array[i] = new J_BlockObj(r,de);
     else Array[i] = new BlockObj(r,de);
 }
+var keysDown = {};
+window.addEventListener('keydown', function(e) {
+    keysDown[e.keyCode] = true;
+});
+window.addEventListener('keyup', function(e) {
+    delete keysDown[e.keyCode];
+});
+/////move by touch
+canvasB.addEventListener("touchstart", function (e) {
+        touches = e.touches[0];
+        tou = 1;
+    });
+canvasB.addEventListener("touchmove", function (e) {
+        var t = e.touches[0];
+        if (t.pageX < touches.pageX && man.x > 0 && man.x < 560) {
+            man.x -= man.speed * 0.015;
+            man.state = 1;
+            if(man.x <= 0) man.x = 1;
+        }
+        else if (t.pageX > touches.pageX && man.x > 0 && man.x < 560) {
+            man.x += man.speed * 0.015;
+            man.state = 2;
+            if(man.x >= 560) man.x = canvasB.width-41;
+        }else man.state = 0;
+        //alert(touches.pageX);
+    });	
