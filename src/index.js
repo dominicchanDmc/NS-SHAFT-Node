@@ -65,21 +65,21 @@ function render() {
 }
 function update(mod) {
     if(game == 1){
-    if (37 in keysDown && man.x >= 0 && man.x < (canvas.width-40) ) {
-        man.x -= man.speed * mod;
-        man.state = 1;
-        if(man.x <= 0) man.x = 1;
+    if (37 in keysDown && player.x >= 0 && player.x < (canvas.width-40) ) {
+        player.x -= player.speed * mod;
+        player.state = 1;
+        if(player.x <= 0) player.x = 1;
     }
-    else if (39 in keysDown && man.x >= 0 && man.x < (canvas.width-40)) {
-        man.x += man.speed * mod;
-        man.state = 2;
-        if(man.x >= (canvas.width-40) ) man.x = canvas.width-41;
-    }else if(mouse == 0 && tou == 0)man.state = 0;
+    else if (39 in keysDown && player.x >= 0 && player.x < (canvas.width-40)) {
+        player.x += player.speed * mod;
+        player.state = 2;
+        if(player.x >= (canvas.width-40) ) player.x = canvas.width-41;
+    }else if(mouse == 0 && tou == 0)player.state = 0;
     for(i = 0 ; i < 10; i++){
         Array[i].y -= speed;
     }
     for( i = 0 ; i < 10 ; i++){
-        if((man.y <= Array[i].y  &&man.y >= Array[i].y -40 )&& man.x >Array[i].x-20 && man.x < Array[i].x +150){
+        if((player.y <= Array[i].y  &&player.y >= Array[i].y -40 )&& player.x >Array[i].x-20 && player.x < Array[i].x +150){
             up =1;
             m_y = i;
             break;
@@ -87,48 +87,48 @@ function update(mod) {
         else up = 0;
     }	
     if(up == 1){
-        man.y = Array[m_y].y-40;
+        player.y = Array[m_y].y-40;
         if(Array[m_y].mod == 1) {
-            if(flag == 0 &&man.life< fulllife ) man.life++;
+            if(flag == 0 &&player.life< fulllife ) player.life++;
             flag = 1;
-            man.speed=ms/3;
+            player.speed=ms/3;
         }else if (Array[m_y].mod == 2){
-            if(flag == 0)man.life -= 5;
+            if(flag == 0)player.life -= 5;
             flag = 1;
-            man.speed = ms;
+            player.speed = ms;
         }else if(Array[m_y].mod == 3){
-            if(flag == 0 &&man.life< fulllife ) man.life++;
-            man.speed = ms*1.5;
-            man.y -= 100;
+            if(flag == 0 &&player.life< fulllife ) player.life++;
+            player.speed = ms*1.5;
+            player.y -= 100;
             flag = 1;
         }
         else {
-            if(flag == 0 &&man.life< fulllife ) man.life++;
-            man.speed =ms;
+            if(flag == 0 &&player.life< fulllife ) player.life++;
+            player.speed =ms;
             flag = 1;
         }
     }	
     else  {
-        if( man.y<35 )
+        if( player.y<35 )
         {
-            man.life -= 5;
-            man.y = 35;
+            player.life -= 5;
+            player.y = 35;
         }
-        man.y += 10;
-        man.speed =ms;
+        player.y += 10;
+        player.speed =ms;
         flag = 0;
     }
-    if(man.y > canvas.height || man.life <=0) {
+    if(player.y > canvas.height || player.life <=0) {
         game = 0;
         end = 1;
     }
-    //console.log(flag+"  "+man.life + "   " + man.speed);
-    if(man.stair > 95) speed = 15;
-    else if(man.stair > 80) speed = 14;
-    else if(man.stair > 65) speed = 12;
-    else if(man.stair > 50) speed = 10;
-    else if(man.stair > 35) speed = 9;
-    else if(man.stair > 20) speed = 8;
+    //console.log(flag+"  "+player.life + "   " + player.speed);
+    if(player.stair > 95) speed = 15;
+    else if(player.stair > 80) speed = 14;
+    else if(player.stair > 65) speed = 12;
+    else if(player.stair > 50) speed = 10;
+    else if(player.stair > 35) speed = 9;
+    else if(player.stair > 20) speed = 8;
     for(i = 0 ; i < 10 ; i++){
         if( Array[i].y <= 30 ){
             Array[i].y = canvas.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
@@ -158,7 +158,7 @@ function update(mod) {
     }
 }
 function run() {
-   // update((Date.now() - time) / 1000);
+    update((Date.now() - time) / 1000);
     render();
     time = Date.now();
 }
@@ -211,15 +211,15 @@ canvasB.addEventListener("touchstart", function (e) {
     });
 canvasB.addEventListener("touchmove", function (e) {
         var t = e.touches[0];
-        if (t.pageX < touches.pageX && man.x > 0 && man.x < 560) {
-            man.x -= man.speed * 0.015;
-            man.state = 1;
-            if(man.x <= 0) man.x = 1;
+        if (t.pageX < touches.pageX && player.x > 0 && player.x < 560) {
+            player.x -= player.speed * 0.015;
+            player.state = 1;
+            if(player.x <= 0) player.x = 1;
         }
-        else if (t.pageX > touches.pageX && man.x > 0 && man.x < 560) {
-            man.x += man.speed * 0.015;
-            man.state = 2;
-            if(man.x >= 560) man.x = canvasB.width-41;
-        }else man.state = 0;
+        else if (t.pageX > touches.pageX && player.x > 0 && player.x < 560) {
+            player.x += player.speed * 0.015;
+            player.state = 2;
+            if(player.x >= 560) player.x = canvasB.width-41;
+        }else player.state = 0;
         //alert(touches.pageX);
     });	
