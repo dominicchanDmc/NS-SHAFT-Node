@@ -22,10 +22,14 @@ const rightpic=new Image();
 		rightpic.src="./assets/right.png";
 let canvasB,ctxB,canvasM,ctxM;
 
-
 let gameStatus = statusSt;
 let player = new PlayerObj();
-
+let keysDown = {};
+let speed = 7; 
+let up = 0,up2=0;
+let down = 1,down2 = 1; 
+let m_y = 0,m_y2 = 0,flag3 = 0;
+let ms = 250;
 //-------------------------
 function render() {
     canvasB = document.getElementById('canvasBoard');
@@ -37,7 +41,7 @@ function render() {
     canvasM.width = 480;
     canvasM.height = 300;
 
-    var keysDown = {};
+    
     window.addEventListener('keydown', function(e) {
         keysDown[e.keyCode] = true;
     });
@@ -103,11 +107,11 @@ function update(mod) {
         player.x += player.speed * mod;
         player.state = 2;
         if(player.x >= (canvas.width-40) ) player.x = canvas.width-41;
-    }else if(mouse == 0 && tou == 0)player.state = 0;
-    for(i = 0 ; i < 10; i++){
+    }
+    for(let i = 0 ; i < 10; i++){
         Array[i].y -= speed;
     }
-    for( i = 0 ; i < 10 ; i++){
+    for(let i = 0 ; i < 10 ; i++){
         if((player.y <= Array[i].y  &&player.y >= Array[i].y -40 )&& player.x >Array[i].x-20 && player.x < Array[i].x +150){
             up =1;
             m_y = i;
