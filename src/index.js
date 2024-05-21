@@ -36,7 +36,7 @@ function render() {
     canvasB.height = 740;
     canvasM.width = 480;
     canvasM.height = 300;
-    
+
     var keysDown = {};
     window.addEventListener('keydown', function(e) {
         keysDown[e.keyCode] = true;
@@ -93,7 +93,7 @@ function render() {
     
 }
 function update(mod) {
-    if(game == 1){
+    // if(game == 1){
     if (37 in keysDown && player.x >= 0 && player.x < (canvas.width-40) ) {
         player.x -= player.speed * mod;
         player.state = 1;
@@ -184,7 +184,7 @@ function update(mod) {
             /////////////////////////////////////
         }	
     }
-    }
+    //}
 }
 function run() {
     update((Date.now() - time) / 1000);
