@@ -7,7 +7,7 @@ class PlayerObj{
         this.y= 300;   
         this.width= 40;
         this.height= 40;  
-        this.speed= 200;   
+        this.speed= 150;   
         this.life= 3;
         this.stair=0;      
         this.state=0;
