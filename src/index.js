@@ -122,18 +122,18 @@ function update(mod) {
     if(up == 1){
         player.y = Array[m_y].y-40;
         if(Array[m_y].mod == 1) {
-            if(flag == 0 &&player.life< fulllife ) player.life++;
-            flag = 1;
+            // if(flag == 0 &&player.life< fulllife ) player.life++;
+            // flag = 1;
             player.speed=ms/3;
         }else if (Array[m_y].mod == 2){
-            if(flag == 0)player.life -= 5;
-            flag = 1;
+            // if(flag == 0)player.life -= 5;
+            // flag = 1;
             player.speed = ms;
         }else if(Array[m_y].mod == 3){
-            if(flag == 0 &&player.life< fulllife ) player.life++;
+            // if(flag == 0 &&player.life< fulllife ) player.life++;
             player.speed = ms*1.5;
             player.y -= 100;
-            flag = 1;
+            // flag = 1;
         }
         else {
             if(flag == 0 &&player.life< fulllife ) player.life++;
