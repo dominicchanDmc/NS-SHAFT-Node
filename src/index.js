@@ -136,9 +136,9 @@ function update(mod) {
             // flag = 1;
         }
         else {
-            if(flag == 0 &&player.life< fulllife ) player.life++;
+            // if(flag == 0 &&player.life< fulllife ) player.life++;
             player.speed =ms;
-            flag = 1;
+            // flag = 1;
         }
     }	
     else  {
@@ -149,7 +149,7 @@ function update(mod) {
         }
         player.y += 10;
         player.speed =ms;
-        flag = 0;
+        // flag = 0;
     }
     if(player.y > canvas.height || player.life <=0) {
         game = 0;
