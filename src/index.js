@@ -151,10 +151,10 @@ function update(mod) {
         player.speed =ms;
         // flag = 0;
     }
-    if(player.y > canvas.height || player.life <=0) {
-        game = 0;
-        end = 1;
-    }
+    // if(player.y > canvas.height || player.life <=0) {
+    //     game = 0;
+    //     end = 1;
+    // }
     //console.log(flag+"  "+player.life + "   " + player.speed);
     if(player.stair > 95) speed = 15;
     else if(player.stair > 80) speed = 14;
@@ -162,7 +162,7 @@ function update(mod) {
     else if(player.stair > 50) speed = 10;
     else if(player.stair > 35) speed = 9;
     else if(player.stair > 20) speed = 8;
-    for(i = 0 ; i < 10 ; i++){
+    for(let i = 0 ; i < 10 ; i++){
         if( Array[i].y <= 30 ){
             Array[i].y = canvas.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
             Array[i].x = Math.random() * canvas.width-100;
