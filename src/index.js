@@ -29,6 +29,7 @@ let speed = 7;
 let up = 0,up2=0;
 let down = 1,down2 = 1; 
 let m_y = 0,m_y2 = 0,flag3 = 0;
+let leftMove = 0 ,b = 0,r = 0;
 let ms = 250;
 //-------------------------
 function render() {
@@ -73,9 +74,9 @@ function render() {
         if(player.state == 0 ) 
             ctxB.drawImage(stand,player.x,player.y,player.width,player.height);
         else if(player.state == 1){
-            ctxB.drawImage(leftpic,a,0,player.width,player.height,player.x,player.y,player.width,player.height);
-            a+=50;
-            if(a >= 200) a =0;
+            ctxB.drawImage(leftpic,leftMove,0,player.width,player.height,player.x,player.y,player.width,player.height);
+            leftMove+=50;
+            if(leftMove >= 200) leftMove =0;
         }	
         else if(player.state == 2){
             ctxB.drawImage(rightpic,b,0,player.width,player.height,player.x,player.y,player.width,player.height);
@@ -98,15 +99,15 @@ function render() {
 }
 function update(mod) {
     // if(game == 1){
-    if (37 in keysDown && player.x >= 0 && player.x < (canvas.width-40) ) {
+    if (37 in keysDown && player.x >= 0 && player.x < (canvasB.width-40) ) {
         player.x -= player.speed * mod;
         player.state = 1;
         if(player.x <= 0) player.x = 1;
     }
-    else if (39 in keysDown && player.x >= 0 && player.x < (canvas.width-40)) {
+    else if (39 in keysDown && player.x >= 0 && player.x < (canvasB.width-40)) {
         player.x += player.speed * mod;
         player.state = 2;
-        if(player.x >= (canvas.width-40) ) player.x = canvas.width-41;
+        if(player.x >= (canvasB.width-40) ) player.x = canvasB.width-41;
     }
     for(let i = 0 ; i < 10; i++){
         Array[i].y -= speed;
