@@ -29,7 +29,7 @@ let speed = 7;
 let up = 0,up2=0;
 let down = 1,down2 = 1; 
 let m_y = 0,m_y2 = 0,flag3 = 0;
-let leftMove = 0 ,b = 0,r = 0;
+let leftMove = 0 ,rightMove = 0,r = 0;
 let ms = 250;
 //-------------------------
 function render() {
@@ -79,9 +79,9 @@ function render() {
             if(leftMove >= 200) leftMove =0;
         }	
         else if(player.state == 2){
-            ctxB.drawImage(rightpic,b,0,player.width,player.height,player.x,player.y,player.width,player.height);
-            b +=50;
-            if(b >= 200) b =0;
+            ctxB.drawImage(rightpic,rightMove,0,player.width,player.height,player.x,player.y,player.width,player.height);
+            rightMove +=50;
+            if(rightMove >= 200) rightMove =0;
         }
         ctxB.drawImage(toppic,0,0,canvasB.width,40);
         for(let i = 0 ; i < 10 ; i++){
