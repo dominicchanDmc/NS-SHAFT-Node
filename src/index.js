@@ -152,7 +152,7 @@ function update(mod) {
         player.speed =ms;
         // flag = 0;
     }
-    // if(player.y > canvas.height || player.life <=0) {
+    // if(player.y > canvasB.height || player.life <=0) {
     //     game = 0;
     //     end = 1;
     // }
@@ -165,15 +165,15 @@ function update(mod) {
     else if(player.stair > 20) speed = 8;
     for(let i = 0 ; i < 10 ; i++){
         if( Array[i].y <= 30 ){
-            Array[i].y = canvas.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
-            Array[i].x = Math.random() * canvas.width-100;
+            Array[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
+            Array[i].x = Math.random() * canvasB.width-100;
             /// Avoid Overlapping
             while(1)
             {
-                Array[i].y = canvas.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
-                Array[i].x = Math.random() * canvas.width-100;
+                Array[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
+                Array[i].x = Math.random() * canvasB.width-100;
                 var overlap = false;
-                for(j = 0 ; j < 10 ; j++)
+                for(let j = 0 ; j < 10 ; j++)
                 {
                     if( i==j ) continue;
                     if( (Math.abs(Array[i].x-Array[j].x)<=200) && (Math.abs(Array[i].y-Array[j].y)<=60)  )
