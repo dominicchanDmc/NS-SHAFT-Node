@@ -203,14 +203,22 @@ setInterval(run, 40);
 let Array = [];
 Array[0] = new BlockObj(150,600);
 for( let i = 1 ; i < 10 ; i++){
-    // let r = Math.random() * canvasB.width-100;
-    let r = Math.random() * 380;
+    let r;
+    if (canvasB!=null && canvasB.width!=null)
+         r = Math.random() * canvasB.width-100;
+    else
+        r = Math.random() * 380;
+    //let r = Math.random() * 380;
     let de = (Math.random() * 10+10+i*4)*40 ;
     /// Avoid Overlapping
     while(1)
-    {
-        // r = Math.random() * canvasB.width-100;
-        r = Math.random() * 380;
+    {    
+    if (canvasB!=null && canvasB.width!=null)
+        r = Math.random() * canvasB.width-100;
+    else
+       r = Math.random() * 380;
+         // = Math.random() * canvasB.width-100;
+        //r = Math.random() * 380;
         de = (Math.random() * 10+10+i*4)*40 ;
         let overlap = false;
         for(let j = 0 ; j < i ; j++)
