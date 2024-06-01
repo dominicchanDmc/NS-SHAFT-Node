@@ -198,7 +198,7 @@ function run() {
 }
 
 var time = Date.now();
-setInterval(run, 40);
+setInterval(run, 35);
 
 let BlockArray = [];
 BlockArray[0] = new BlockObj(150,600);
@@ -219,7 +219,7 @@ for( let i = 1 ; i < 10 ; i++){
        r = Math.random() * 380;
          // = Math.random() * canvasB.width-100;
         //r = Math.random() * 380;
-        de = (Math.random() * 10+10+i*4)*40 ;
+        de = (Math.random() * 200+i*400)*400 ;
         let overlap = false;
         for(let j = 0 ; j < i ; j++)
         {
