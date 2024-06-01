@@ -85,13 +85,13 @@ function render() {
         }
         ctxB.drawImage(toppic,0,0,canvasB.width,40);
         for(let i = 0 ; i < 10 ; i++){
-            if(Array[i].mod == 0) ctxB.drawImage(blockPic,Array[i].x, Array[i].y, Array[i].width, Array[i].height);
-            else if  (Array[i].mod == 1) ctxB.drawImage(spic,Array[i].x, Array[i].y, Array[i].width, Array[i].height);
-            else if  (Array[i].mod == 2) ctxB.drawImage(kpic,Array[i].x, Array[i].y, Array[i].width, Array[i].height);
-            else if  (Array[i].mod == 3) ctxB.drawImage(j_blockPic,Array[i].x, Array[i].y, Array[i].width, Array[i].height);
+            if(BlockArray[i].mod == 0) ctxB.drawImage(blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
+            else if  (BlockArray[i].mod == 1) ctxB.drawImage(spic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
+            else if  (BlockArray[i].mod == 2) ctxB.drawImage(kpic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
+            else if  (BlockArray[i].mod == 3) ctxB.drawImage(j_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else{
-                ctxB.fillStyle = Array[i].color;
-                ctxB.fillRect(Array[i].x, Array[i].y, Array[i].width, Array[i].height);
+                ctxB.fillStyle = BlockArray[i].color;
+                ctxB.fillRect(BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             }	
         }
     }
@@ -110,10 +110,10 @@ function update(mod) {
         if(player.x >= (canvasB.width-40) ) player.x = canvasB.width-41;
     }
     for(let i = 0 ; i < 10; i++){
-        Array[i].y -= speed;
+        BlockArray[i].y -= speed;
     }
     for(let i = 0 ; i < 10 ; i++){
-        if((player.y <= Array[i].y  &&player.y >= Array[i].y -40 )&& player.x >Array[i].x-20 && player.x < Array[i].x +150){
+        if((player.y <= BlockArray[i].y  &&player.y >= BlockArray[i].y -40 )&& player.x >BlockArray[i].x-20 && player.x < BlockArray[i].x +150){
             up =1;
             m_y = i;
             break;
@@ -121,16 +121,16 @@ function update(mod) {
         else up = 0;
     }	
     if(up == 1){
-        player.y = Array[m_y].y-40;
-        if(Array[m_y].mod == 1) {
+        player.y = BlockArray[m_y].y-40;
+        if(BlockArray[m_y].mod == 1) {
             // if(flag == 0 &&player.life< fulllife ) player.life++;
             // flag = 1;
             player.speed=ms/3;
-        }else if (Array[m_y].mod == 2){
+        }else if (BlockArray[m_y].mod == 2){
             // if(flag == 0)player.life -= 5;
             // flag = 1;
             player.speed = ms;
-        }else if(Array[m_y].mod == 3){
+        }else if(BlockArray[m_y].mod == 3){
             // if(flag == 0 &&player.life< fulllife ) player.life++;
             player.speed = ms*1.5;
             player.y -= 100;
@@ -164,19 +164,19 @@ function update(mod) {
     else if(player.stair > 35) speed = 9;
     else if(player.stair > 20) speed = 8;
     for(let i = 0 ; i < 10 ; i++){
-        if( Array[i].y <= 30 ){
-            Array[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
-            Array[i].x = Math.random() * canvasB.width-100;
+        if( BlockArray[i].y <= 30 ){
+            BlockArray[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
+            BlockArray[i].x = Math.random() * canvasB.width-100;
             /// Avoid Overlapping
             while(1)
             {
-                Array[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
-                Array[i].x = Math.random() * canvasB.width-100;
+                BlockArray[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
+                BlockArray[i].x = Math.random() * canvasB.width-100;
                 var overlap = false;
                 for(let j = 0 ; j < 10 ; j++)
                 {
                     if( i==j ) continue;
-                    if( (Math.abs(Array[i].x-Array[j].x)<=200) && (Math.abs(Array[i].y-Array[j].y)<=60)  )
+                    if( (Math.abs(BlockArray[i].x-BlockArray[j].x)<=200) && (Math.abs(BlockArray[i].y-BlockArray[j].y)<=60)  )
                     {
                         overlap = true;
                         //console.log("overlap!");
@@ -200,12 +200,12 @@ function run() {
 var time = Date.now();
 setInterval(run, 40);
 
-let Array = [];
-Array[0] = new BlockObj(150,600);
+let BlockArray = [];
+BlockArray[0] = new BlockObj(150,600);
 for( let i = 1 ; i < 10 ; i++){
     let r;
     if (canvasB!=null && canvasB.width!=null)
-         r = Math.random() * canvasB.width-100;
+         r = Math.random() * canvasB.width-150;
     else
         r = Math.random() * 380;
     //let r = Math.random() * 380;
@@ -214,7 +214,7 @@ for( let i = 1 ; i < 10 ; i++){
     while(1)
     {    
     if (canvasB!=null && canvasB.width!=null)
-        r = Math.random() * canvasB.width-100;
+        r = Math.random() * canvasB.width-150;
     else
        r = Math.random() * 380;
          // = Math.random() * canvasB.width-100;
@@ -224,7 +224,7 @@ for( let i = 1 ; i < 10 ; i++){
         for(let j = 0 ; j < i ; j++)
         {
             if(i==j) continue;
-            if( (Math.abs(r-Array[j].x)<=200) && (Math.abs(de-Array[j].y)<=60)  )
+            if( (Math.abs(r-BlockArray[j].x)<=200) && (Math.abs(de-BlockArray[j].y)<=60)  )
             {
                 overlap = true;
                 //console.log("overlap!");
@@ -234,8 +234,8 @@ for( let i = 1 ; i < 10 ; i++){
         if(!overlap) break;
     }
     /////////////////////////////////////
-    if(i == 3 || i == 9 ) Array[i] = new BlockObj(r,de);
-    else if ( i == 2 || i == 7) Array[i] = new BlockObj(r,de);
-    else if ( i == 5 ) Array[i] = new J_BlockObj(r,de);
-    else Array[i] = new BlockObj(r,de);
+    if(i == 3 || i == 9 ) BlockArray[i] = new BlockObj(r,de);
+    else if ( i == 2 || i == 7) BlockArray[i] = new BlockObj(r,de);
+    else if ( i == 5 ) BlockArray[i] = new J_BlockObj(r,de);
+    else BlockArray[i] = new BlockObj(r,de);
 }
