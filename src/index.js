@@ -84,7 +84,7 @@ function render() {
             if(rightMove >= 200) rightMove =0;
         }
         ctxB.drawImage(toppic,0,0,canvasB.width,40);
-        for(let i = 0 ; i < 10 ; i++){
+        for(let i = 0 ; i < 12 ; i++){
             if(BlockArray[i].mod == 0) ctxB.drawImage(blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else if  (BlockArray[i].mod == 1) ctxB.drawImage(spic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else if  (BlockArray[i].mod == 2) ctxB.drawImage(kpic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
@@ -109,10 +109,10 @@ function update(mod) {
         player.state = 2;
         if(player.x >= (canvasB.width-40) ) player.x = canvasB.width-41;
     }
-    for(let i = 0 ; i < 10; i++){
+    for(let i = 0 ; i < 12; i++){
         BlockArray[i].y -= speed;
     }
-    for(let i = 0 ; i < 10 ; i++){
+    for(let i = 0 ; i < 12 ; i++){
         if((player.y <= BlockArray[i].y  &&player.y >= BlockArray[i].y -40 )&& player.x >BlockArray[i].x-20 && player.x < BlockArray[i].x +150){
             up =1;
             m_y = i;
@@ -163,17 +163,17 @@ function update(mod) {
     else if(player.stair > 50) speed = 10;
     else if(player.stair > 35) speed = 9;
     else if(player.stair > 20) speed = 8;
-    for(let i = 0 ; i < 10 ; i++){
+    for(let i = 0 ; i < 12 ; i++){
         if( BlockArray[i].y <= 30 ){
-            BlockArray[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
+            BlockArray[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 100;
             BlockArray[i].x = Math.random() * canvasB.width-100;
             /// Avoid Overlapping
             while(1)
             {
-                BlockArray[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 200;
+                BlockArray[i].y = canvasB.height + (Math.random()*10+1)*(Math.random()*50+50) + 100;
                 BlockArray[i].x = Math.random() * canvasB.width-100;
                 var overlap = false;
-                for(let j = 0 ; j < 10 ; j++)
+                for(let j = 0 ; j < 12 ; j++)
                 {
                     if( i==j ) continue;
                     if( (Math.abs(BlockArray[i].x-BlockArray[j].x)<=200) && (Math.abs(BlockArray[i].y-BlockArray[j].y)<=60)  )
@@ -202,14 +202,14 @@ setInterval(run, 35);
 
 let BlockArray = [];
 BlockArray[0] = new BlockObj(150,600);
-for( let i = 1 ; i < 10 ; i++){
+for( let i = 1 ; i < 12 ; i++){
     let r;
     if (canvasB!=null && canvasB.width!=null)
          r = Math.random() * canvasB.width-150;
     else
         r = Math.random() * 380;
     //let r = Math.random() * 380;
-    let de = (Math.random() * 10+10+i*4)*40 ;
+    let de = (Math.random() * 20+i*4)*40 ;
     /// Avoid Overlapping
     while(1)
     {    
@@ -219,7 +219,7 @@ for( let i = 1 ; i < 10 ; i++){
        r = Math.random() * 380;
          // = Math.random() * canvasB.width-100;
         //r = Math.random() * 380;
-        de = (Math.random() * 200+i*400)*400 ;
+        de = (Math.random() * 20+i*4)*40 ;
         let overlap = false;
         for(let j = 0 ; j < i ; j++)
         {
