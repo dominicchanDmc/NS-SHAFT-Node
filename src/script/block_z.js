@@ -19,6 +19,11 @@ class BlockZObj{
         this.action = d;
         this.color = '#198e99';
     }
+
+    setZValue(a,b) {
+       this.x= a;
+        this.y= b;
+    }
 } 
 
 export default BlockZObj; 
