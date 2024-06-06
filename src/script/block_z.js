@@ -20,9 +20,10 @@ class BlockZObj{
         this.color = '#198e99';
     }
 
-    setZValue(a,b) {
+    setZValue(a,b,speed) {
        this.x= a;
         this.y= b;
+        this.speed = speed;
     }
 } 
 
