@@ -16,6 +16,8 @@ const blockPic=new Image();
 		blockPic.src="./assets/block.jpg";
 const j_blockPic=new Image();
 		j_blockPic.src="./assets/jblock.jpg";
+const d_blockPic=new Image();
+        d_blockPic.src="./assets/dblock.jpg";
 const leftpic=new Image();
 		leftpic.src="./assets/left.png";
 const rightpic=new Image();
@@ -87,7 +89,7 @@ function render() {
         for(let i = 0 ; i < 12 ; i++){
             if(BlockArray[i].mod == 0) ctxB.drawImage(blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else if  (BlockArray[i].mod == 1) ctxB.drawImage(spic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
-            else if  (BlockArray[i].mod == 2) ctxB.drawImage(kpic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
+            else if  (BlockArray[i].mod == 2) ctxB.drawImage(d_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else if  (BlockArray[i].mod == 3) ctxB.drawImage(j_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else{
                 ctxB.fillStyle = BlockArray[i].color;
@@ -235,7 +237,7 @@ for( let i = 1 ; i < 12 ; i++){
     }
     /////////////////////////////////////
     if(i == 3 || i == 9 ) BlockArray[i] = new BlockObj(r,de);
-    else if ( i == 2 || i == 7) BlockArray[i] = new BlockObj(r,de);
+    else if ( i == 2 || i == 7) BlockArray[i] = new D_BlockObj(r,de);
     else if ( i == 5 ) BlockArray[i] = new J_BlockObj(r,de);
     else BlockArray[i] = new BlockObj(r,de);
 }
