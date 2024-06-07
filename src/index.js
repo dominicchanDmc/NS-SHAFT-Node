@@ -5,6 +5,7 @@ import D_BlockObj from "./script/d_Block.js";
 
 //--------param
 const statusSt = 'Start';
+const standHold = 0; leftMoveAction = 1 ,rightMoveAction = 2;
 
 const bgpic=new Image();
 		bgpic.src="./assets/bg.jpg";
@@ -33,6 +34,7 @@ let down = 1,down2 = 1;
 let m_y = 0,m_y2 = 0,flag3 = 0;
 let leftMove = 0 ,rightMove = 0,r = 0;
 let ms = 250;
+let recondFloor = 0;
 //-------------------------
 function render() {
     canvasB = document.getElementById('canvasBoard');
@@ -73,14 +75,14 @@ function render() {
 
     if(gameStatus == statusSt ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
-        if(player.state == 0 ) 
+        if(player.state == standHold ) 
             ctxB.drawImage(stand,player.x,player.y,player.width,player.height);
-        else if(player.state == 1){
+        else if(player.state == leftMoveAction){
             ctxB.drawImage(leftpic,leftMove,0,player.width,player.height,player.x,player.y,player.width,player.height);
             leftMove+=50;
             if(leftMove >= 200) leftMove =0;
         }	
-        else if(player.state == 2){
+        else if(player.state == rightMoveAction){
             ctxB.drawImage(rightpic,rightMove,0,player.width,player.height,player.x,player.y,player.width,player.height);
             rightMove +=50;
             if(rightMove >= 200) rightMove =0;
@@ -96,6 +98,7 @@ function render() {
                 ctxB.fillRect(BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             }	
         }
+        recondFloor++;
     }
     
 }
