@@ -5,7 +5,7 @@ import D_BlockObj from "./script/d_Block.js";
 
 //--------param
 const statusSt = 'Start';
-const standHold = 0; leftMoveAction = 1 ,rightMoveAction = 2;
+const standHold = 0, leftMoveAction = 1 ,rightMoveAction = 2;
 
 const bgpic=new Image();
 		bgpic.src="./assets/bg.jpg";
