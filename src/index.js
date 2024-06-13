@@ -100,7 +100,31 @@ function render() {
         }
         recondFloor++;
     }
-    
+    else{ 
+        player.stair = Math.floor(stair/70);
+        ctxM.clearRect(0, 0,canvasM.width,canvasM.height);
+        ctxM.font = "60px Verdana";
+        ctxM.fillStyle = "#F7A619";
+        ctxM.fillText("LIFE = " + player.life, 30, 80);
+        ctxM.lineWidth = 2;
+        ctxM.strokeStyle = "#0EA418";
+        ctxM.strokeText("LIFE = " + player.life, 30, 80);
+        ctxM.font = "60px Verdana";
+        ctxM.fillStyle = "#F7A619";
+        ctxM.fillText("STAIR = " + player.stair, 30, 150);
+        ctxM.lineWidth = 2;
+        ctxM.strokeStyle = "#0EA418";
+        ctxM.strokeText("STAIR = " + player.stair, 30, 150);
+        if(localStorage.getItem('rec') < player.stair && end == 1) localStorage['rec'] = player.stair;
+        ctxM.font = "60px Verdana";
+        ctxM.fillStyle = "#F7A619";
+        if( localStorage.getItem('rec') == null) ctxM.fillText("RECORD = 0" , 30, 220);
+        else ctxM.fillText("RECORD =" + localStorage.getItem('rec'), 30, 220);
+        ctxM.lineWidth = 2;
+        ctxM.strokeStyle = "#0EA418";
+        if( localStorage.getItem('rec') == null) ctxM.strokeText("RECORD = 0" , 30, 220);
+        else ctxM.strokeText("RECORD =" + localStorage.getItem('rec'), 30, 220);
+        }
 }
 function update(mod) {
     // if(game == 1){
