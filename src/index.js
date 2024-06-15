@@ -4,7 +4,8 @@ import J_BlockObj from "./script/j_Block.js";
 import D_BlockObj from "./script/d_Block.js";
 
 //--------param
-const statusSt = 'Start';
+const statusStart = 'Start';
+const statusEnd = 'End';
 const standHold = 0, leftMoveAction = 1 ,rightMoveAction = 2;
 
 const bgpic=new Image();
@@ -25,7 +26,8 @@ const rightpic=new Image();
 		rightpic.src="./assets/right.png";
 let canvasB,ctxB,canvasM,ctxM;
 
-let gameStatus = statusSt;
+let gameStatus = statusStart;
+let endStatus = false;
 let player = new PlayerObj();
 let keysDown = {};
 let speed = 7; 
@@ -73,7 +75,7 @@ function render() {
             //alert(touches.pageX);
         });	
 
-    if(gameStatus == statusSt ){
+    if(gameStatus == statusStart ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
         if(player.state == standHold ) 
             ctxB.drawImage(stand,player.x,player.y,player.width,player.height);
@@ -181,11 +183,11 @@ function update(mod) {
         player.speed =ms;
         // flag = 0;
     }
-    // if(player.y > canvasB.height || player.life <=0) {
-    //     game = 0;
-    //     end = 1;
-    // }
-    //console.log(flag+"  "+player.life + "   " + player.speed);
+    if(player.y > canvasB.height || player.life <=0) {
+        gameStatus = statusEnd;
+        endStatus = true;
+    }
+    // console.log(flag+"  "+player.life + "   " + player.speed);
     if(player.stair > 95) speed = 15;
     else if(player.stair > 80) speed = 14;
     else if(player.stair > 65) speed = 10;
