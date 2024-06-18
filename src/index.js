@@ -183,7 +183,7 @@ function update(mod) {
         player.speed =ms;
         // flag = 0;
     }
-    if(player.y > canvasB.height || player.life <=0) {
+    if(canvasB!=undefined && (player.y > canvasB.height || player.life <=0)) {
         gameStatus = statusEnd;
         endStatus = true;
     }
