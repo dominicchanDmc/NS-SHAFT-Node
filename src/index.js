@@ -103,7 +103,7 @@ function render() {
         recondFloor++;
     }
     else{ 
-        player.stair = Math.floor(stair/70);
+        player.recondFloor = Math.floor(recondFloor/70);
         ctxM.clearRect(0, 0,canvasM.width,canvasM.height);
         ctxM.font = "60px Verdana";
         ctxM.fillStyle = "#F7A619";
@@ -113,11 +113,11 @@ function render() {
         ctxM.strokeText("LIFE = " + player.life, 30, 80);
         ctxM.font = "60px Verdana";
         ctxM.fillStyle = "#F7A619";
-        ctxM.fillText("STAIR = " + player.stair, 30, 150);
+        ctxM.fillText("RecondFloor = " + player.recondFloor, 30, 150);
         ctxM.lineWidth = 2;
         ctxM.strokeStyle = "#0EA418";
-        ctxM.strokeText("STAIR = " + player.stair, 30, 150);
-        if(localStorage.getItem('rec') < player.stair && end == 1) localStorage['rec'] = player.stair;
+        ctxM.strokeText("RecondFloor = " + player.recondFloor, 30, 150);
+        if(localStorage.getItem('rec') < player.recondFloor && end == 1) localStorage['rec'] = player.recondFloor;
         ctxM.font = "60px Verdana";
         ctxM.fillStyle = "#F7A619";
         if( localStorage.getItem('rec') == null) ctxM.fillText("RECORD = 0" , 30, 220);
