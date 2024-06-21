@@ -180,10 +180,15 @@ function update(mod) {
             player.speed=ms/3;
         }
 
-        }else if(BlockArray[m_y].mod == 3){
+        else if(BlockArray[m_y].mod == 3){
             // if(flag == 0 &&player.life< fulllife ) player.life++;
             player.speed = ms*1.5;
             player.y -= 100;
+            // flag = 1;
+        }
+        else if (BlockArray[m_y].mod == 4){
+            // if(flag == 0 &&player.life< fulllife ) player.life++;
+            player.speed =ms;
             // flag = 1;
         }
         else {
@@ -191,6 +196,7 @@ function update(mod) {
             player.speed =ms;
             // flag = 1;
         }
+    
     }	
     else  {
         if( player.y<35 )
