@@ -18,6 +18,7 @@ class BlockZObj{
         this.mode = c;
         this.action = d;
         this.color = '#198e99';
+        this.z = [x,y];
     }
 
     setZValue(a,b,speed,mod) {
