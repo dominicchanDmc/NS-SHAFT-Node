@@ -7,6 +7,7 @@ class BlockZObj{
         this.height= 300;
         this.mod = 0;
         this.color = '#198e99';
+        this.z = [x,y];
     }
 
     constructor(a,b,c,d) {
