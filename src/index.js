@@ -186,11 +186,11 @@ function update(mod) {
             player.y -= 100;
             // flag = 1;
         }
-        else if (BlockArray[m_y].mod == 4){
-             if(flag == 0 &&player.life< fulllife ) player.life++;
-            player.speed =ms;
-             flag = 1;
-        }
+        // else if (BlockArray[m_y].mod == 4){
+        //      if(flag == 0 &&player.life< fulllife ) player.life++;
+        //     player.speed =ms;
+        //      flag = 1;
+        // }
         else {
             // if(flag == 0 &&player.life< fulllife ) player.life++;
             player.speed =ms;
