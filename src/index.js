@@ -167,6 +167,11 @@ function update(mod) {
             player.y -= 100;
             // flag = 1;
         }
+        else if(BlockArray[m_y].mod == 4){
+             if(flag == 0 &&player.life< fulllife ) player.life++;
+            player.speed = ms*1.6;
+            player.y -= 120;
+        }
         else {
             // if(flag == 0 &&player.life< fulllife ) player.life++;
             player.speed =ms;
@@ -180,12 +185,12 @@ function update(mod) {
             player.speed=ms/3;
         }
 
-        else if(BlockArray[m_y].mod == 3){
-            // if(flag == 0 &&player.life< fulllife ) player.life++;
-            player.speed = ms*1.5;
-            player.y -= 100;
-            // flag = 1;
-        }
+        // else if(BlockArray[m_y].mod == 3){
+        //     // if(flag == 0 &&player.life< fulllife ) player.life++;
+        //     player.speed = ms*1.5;
+        //     player.y -= 100;
+        //     // flag = 1;
+        // }
         // else if (BlockArray[m_y].mod == 4){
         //      if(flag == 0 &&player.life< fulllife ) player.life++;
         //     player.speed =ms;
