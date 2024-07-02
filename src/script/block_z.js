@@ -22,11 +22,13 @@ class BlockZObj{
         this.z = [x,y];
     }
 
-    setZValue(a,b,speed,mod) {
+    setZValue(a,b,speed,mod,size) {
        this.x= a;
         this.y= b;
         this.speed = speed;
         this.mod= mod;
+        this.z = [x,y];
+        this.size = size;
     }
 } 
 
