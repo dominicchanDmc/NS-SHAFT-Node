@@ -37,6 +37,7 @@ let m_y = 0,m_y2 = 0,flag3 = 0;
 let leftMove = 0 ,rightMove = 0,r = 0;
 let ms = 250;
 let recondFloor = 0;
+
 //-------------------------
 function render() {
     canvasB = document.getElementById('canvasBoard');
@@ -180,17 +181,17 @@ function update(mod) {
             player.speed=ms/3;
         }
 
-        // else if(BlockArray[m_y].mod == 3){
-        //     // if(flag == 0 &&player.life< fulllife ) player.life++;
-        //     player.speed = ms*1.5;
-        //     player.y -= 100;
-        //     // flag = 1;
-        // }
-        // else if (BlockArray[m_y].mod == 4){
-        //      if(flag == 0 &&player.life< fulllife ) player.life++;
-        //     player.speed =ms;
-        //      flag = 1;
-        // }
+        else if(BlockArray[m_y].mod == 3){
+            // if(flag == 0 &&player.life< fulllife ) player.life++;
+            player.speed = ms*1.5;
+            player.y -= 100;
+            // flag = 1;
+        }
+        else if (BlockArray[m_y].mod == 4){
+             if(flag == 0 &&player.life< fulllife ) player.life++;
+            player.speed =ms;
+             flag = 1;
+        }
         else {
             // if(flag == 0 &&player.life< fulllife ) player.life++;
             player.speed =ms;
