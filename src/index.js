@@ -173,27 +173,7 @@ function update(mod) {
             player.speed =ms;
             // flag = 1;
         }
-    }if(up == 2){
-        player.y = BlockArray[m_y].y-40;
-        if(BlockArray[m_y].mod == 2) {
-            // if(flag == 0 &&player.life< fulllife ) player.life++;
-            // flag = 1;
-            player.speed=ms/3;
-        }
-
-        else if(BlockArray[m_y].mod == 3){
-            // if(flag == 0 &&player.life< fulllife ) player.life++;
-            player.speed = ms*1.5;
-            player.y -= 100;
-            // flag = 1;
-        }
-        else {
-            // if(flag == 0 &&player.life< fulllife ) player.life++;
-            player.speed =ms;
-            // flag = 1;
-        }
-    
-    }	
+    }
     else  {
         if( player.y<35 )
         {
