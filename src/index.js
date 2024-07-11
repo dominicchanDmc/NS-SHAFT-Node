@@ -105,7 +105,7 @@ function render() {
     }
     else if( (gameStatus == statusEnd) && endStatus){
         ctxM.clearRect(0, 0, canvasM.width, canvasM.height);
-        var grd=ctxM.createLinearGradient(240,0,240,640);
+        let grd=ctxM.createLinearGradient(240,0,240,640);
         grd.addColorStop(0,"#eff2f7");
         grd.addColorStop(1,"#052459");
         ctxM.fillStyle=grd;
