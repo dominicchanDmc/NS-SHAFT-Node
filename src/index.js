@@ -24,6 +24,8 @@ const leftpic=new Image();
 		leftpic.src="./assets/left.png";
 const rightpic=new Image();
 		rightpic.src="./assets/right.png";
+const gameOverPic=new Image();
+        gameOverPic.src="./assets/gameOver.jpg";
 let canvasB,ctxB,canvasM,ctxM;
 
 let gameStatus = statusStart;
