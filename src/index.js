@@ -119,7 +119,7 @@ function render() {
         ctxM.strokeStyle = "#8A0808";
         ctxM.strokeText("Game Over", 70, 100);
         player.life = 0;
-        // ctxM.drawImage(QQpic,100, 200, 280,280);
+        ctxM.drawImage(gameOverPic,100, 200, 280,280);
         ctxM.fillStyle = "#FFA500";
         ctxM.fillRect(140,520,200,50);
         ctxM.lineWidth = 4;
