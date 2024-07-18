@@ -106,31 +106,31 @@ function render() {
         recondFloor++;
     }
     else if( (gameStatus == statusEnd) && endStatus){
-        ctxM.clearRect(0, 0, canvasM.width, canvasM.height);
-        let grd=ctxM.createLinearGradient(240,0,240,640);
+        ctxB.clearRect(0, 0, canvasM.width, canvasM.height);
+        let grd=ctxB.createLinearGradient(240,0,240,640);
         grd.addColorStop(0,"#eff2f7");
         grd.addColorStop(1,"#052459");
-        ctxM.fillStyle=grd;
-        ctxM.fillRect(0,0,canvasM.width,canvasM.height);
-        ctxM.font = "60px Verdana";
-        ctxM.fillStyle = "#FFA500";
-        ctxM.fillText("Game Over", 70, 100);
-        ctxM.lineWidth = 3;
-        ctxM.strokeStyle = "#8A0808";
-        ctxM.strokeText("Game Over", 70, 100);
+        ctxB.fillStyle=grd;
+        ctxB.fillRect(0,0,canvasM.width,canvasM.height);
+        ctxB.font = "60px Verdana";
+        ctxB.fillStyle = "#FFA500";
+        ctxB.fillText("Game Over", 70, 100);
+        ctxB.lineWidth = 3;
+        ctxB.strokeStyle = "#8A0808";
+        ctxB.strokeText("Game Over", 70, 100);
         player.life = 0;
-        ctxM.drawImage(gameOverPic,100, 200, 280,280);
-        ctxM.fillStyle = "#FFA500";
-        ctxM.fillRect(140,520,200,50);
-        ctxM.lineWidth = 4;
-        ctxM.strokeStyle = "#8A0808";
-        ctxM.strokeRect(140,520,200,50);
-        ctxM.font = "40px Verdana";
-        ctxM.fillStyle = "#FFA500";
-        ctxM.fillText("restart", 170, 560);
-        ctxM.lineWidth = 2;
-        ctxM.strokeStyle = "#8A0808";
-        ctxM.strokeText("restart", 170, 560);
+        ctxB.drawImage(gameOverPic,100, 200, 280,280);
+        ctxB.fillStyle = "#FFA500";
+        ctxB.fillRect(140,520,200,50);
+        ctxB.lineWidth = 4;
+        ctxB.strokeStyle = "#8A0808";
+        ctxB.strokeRect(140,520,200,50);
+        ctxB.font = "40px Verdana";
+        ctxB.fillStyle = "#FFA500";
+        ctxB.fillText("restart", 170, 560);
+        ctxB.lineWidth = 2;
+        ctxB.strokeStyle = "#8A0808";
+        ctxB.strokeText("restart", 170, 560);
     }
     else{ 
         player.recondFloor = Math.floor(recondFloor/70);
