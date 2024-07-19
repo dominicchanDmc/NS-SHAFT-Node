@@ -78,7 +78,7 @@ function render() {
             //alert(touches.pageX);
         });	
 
-		function mousedown(e) {
+		function mouseDown(e) {
 			var x = e.clientX;
 			var y = e.clientY;
 		    if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
