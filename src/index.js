@@ -78,6 +78,31 @@ function render() {
             //alert(touches.pageX);
         });	
 
+		function mousedown(e) {
+			var x = e.clientX;
+			var y = e.clientY;
+		    if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
+				flag3 =0;
+				player =0;
+				win =0;
+				end = 0;		
+				man.x= 200;
+				man.y= 300;
+				man2.x= 250;
+				man2.y= 300;
+				man.life=fulllife;
+				man2.life=fulllife;
+				man.stair=0;
+				man.state=0;
+				stair  =0;
+				mouse = 0;
+				game = 0;
+				start = 1;
+				man.speed = 250;
+				speed = 5;	
+			}		
+	}
+
     if(gameStatus == statusStart ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
         if(player.state == standHold ) 
