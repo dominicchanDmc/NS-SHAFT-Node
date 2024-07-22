@@ -86,19 +86,19 @@ function render() {
 				player =0;
 				win =0;
 				end = 0;		
-				man.x= 200;
-				man.y= 300;
-				man2.x= 250;
-				man2.y= 300;
-				man.life=fulllife;
-				man2.life=fulllife;
-				man.stair=0;
-				man.state=0;
+				player.x= 200;
+				player.y= 300;
+				// man2.x= 250;
+				// man2.y= 300;
+				player.life=fulllife;
+				// man2.life=fulllife;
+				player.stair=0;
+				player.state=0;
 				stair  =0;
 				mouse = 0;
 				game = 0;
 				start = 1;
-				man.speed = 250;
+				player.speed = 250;
 				speed = 5;	
 			}		
 	}
