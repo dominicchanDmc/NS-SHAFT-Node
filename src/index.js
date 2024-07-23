@@ -92,9 +92,9 @@ function render() {
 				// man2.y= 300;
 				player.life=fulllife;
 				// man2.life=fulllife;
-				player.stair=0;
+				player.recondFloor=0;
 				player.state=0;
-				stair  =0;
+				recondFloor  =0;
 				mouse = 0;
 				game = 0;
 				start = 1;
