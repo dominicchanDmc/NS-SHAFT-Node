@@ -78,9 +78,9 @@ function render() {
             //alert(touches.pageX);
         });	
 
-        canvasB.addEventListener('mouseDown', mouseDown(e), false);
+    canvasB.addEventListener('mouseDown', mouseDown(e), false);
 
-		function mouseDown(e) {
+	function mouseDown(e) {
 			var x = e.clientX;
 			var y = e.clientY;
 		    if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
@@ -90,10 +90,7 @@ function render() {
 				end = 0;		
 				player.x= 200;
 				player.y= 300;
-				// man2.x= 250;
-				// man2.y= 300;
 				player.life=fulllife;
-				// man2.life=fulllife;
 				player.recondFloor=0;
 				player.state=0;
 				recondFloor  =0;
