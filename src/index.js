@@ -61,7 +61,7 @@ function render() {
     /////move by touch
     canvasB.addEventListener("touchstart", function (e) {
             touches = e.touches[0];
-            tou = 1;
+          // tou = 1;
         });
     canvasB.addEventListener("touchmove", function (e) {
             var t = e.touches[0];
