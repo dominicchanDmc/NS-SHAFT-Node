@@ -78,7 +78,7 @@ function render() {
             //alert(touches.pageX);
         });	
 
-    canvasB.addEventListener('mouseDown', mouseDown(), false);
+    canvasB.addEventListener('mouseDown', mouseDown, false);
 
 	function mouseDown(e) {
 			var x = e.clientX;
