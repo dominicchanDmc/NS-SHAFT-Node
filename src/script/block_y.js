@@ -22,7 +22,7 @@ class BlockYObj{
         this.z = [x,y];
     }
 
-    setZValue(a,b,speed,mod,size,color) {
+    setYValue(a,b,speed,mod,size,color) {
        this.x= a;
         this.y= b;
         this.speed = speed;
