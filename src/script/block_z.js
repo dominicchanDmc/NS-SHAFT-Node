@@ -1,5 +1,4 @@
 class BlockZObj{
-    
     constructor(a,b) {
         this.x= a;
         this.y= b;
@@ -31,6 +30,8 @@ class BlockZObj{
         this.size = size;
         this.hp = hp;
     }
+
+    
 } 
 
 export default BlockZObj; 

@@ -80,26 +80,27 @@ function render() {
 
     canvasB.addEventListener('mouseDown', mouseDown, false);
 
-	function mouseDown(e) {
-			var x = e.clientX;
-			var y = e.clientY;
-		    if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
-				flag3 =0;
-				player =0;
-				win =0;
-				end = 0;		
-				player.x= 200;
-				player.y= 300;
-				player.life=fulllife;
-				player.recondFloor=0;
-				player.state=0;
-				recondFloor  =0;
-				mouse = 0;
-				game = 0;
-				start = 1;
-				player.speed = 250;
-				speed = 5;	
-			}		
+	function mouseDown() {
+            alert();
+			// var x = e.clientX;
+			// var y = e.clientY;
+		    // if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
+			// 	flag3 =0;
+			// 	player =0;
+			// 	win =0;
+			// 	end = 0;		
+			// 	player.x= 200;
+			// 	player.y= 300;
+			// 	player.life=fulllife;
+			// 	player.recondFloor=0;
+			// 	player.state=0;
+			// 	recondFloor  =0;
+			// 	mouse = 0;
+			// 	game = 0;
+			// 	start = 1;
+			// 	player.speed = 250;
+			// 	speed = 5;	
+			// }		
 	}
 
     if(gameStatus == statusStart ){
