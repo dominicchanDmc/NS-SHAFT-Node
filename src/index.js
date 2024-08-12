@@ -63,25 +63,35 @@ function render() {
             touches = e.touches[0];
           // tou = 1;
         });
-    canvasB.addEventListener("touchmove", function (e) {
-            var t = e.touches[0];
-            if (t.pageX < touches.pageX && player.x > 0 && player.x < 560) {
-                player.x -= player.speed * 0.015;
-                player.state = 1;
-                if(player.x <= 0) player.x = 1;
-            }
-            else if (t.pageX > touches.pageX && player.x > 0 && player.x < 560) {
-                player.x += player.speed * 0.015;
-                player.state = 2;
-                if(player.x >= 560) player.x = canvasB.width-41;
-            }else player.state = 0;
-            //alert(touches.pageX);
-        });	
+    // canvasB.addEventListener("touchmove", function (e) {
+    //         var t = e.touches[0];
+    //         alert(touches.pageX);
+    //         if (t.pageX < touches.pageX && player.x > 0 && player.x < 560) {
+    //             player.x -= player.speed * 0.015;
+    //             player.state = 1;
+    //             if(player.x <= 0) player.x = 1;
+    //         }
+    //         else if (t.pageX > touches.pageX && player.x > 0 && player.x < 560) {
+    //             player.x += player.speed * 0.015;
+    //             player.state = 2;
+    //             if(player.x >= 560) player.x = canvasB.width-41;
+    //         }else player.state = 0;
+    //         //alert(touches.pageX);
+    //     });	
 
-    canvasB.addEventListener('mouseDown', mouseDown, false);
+    canvasB.addEventListener('mousedown ', mouseDown, false);
 
 	function mouseDown() {
-            alert();
+        console.log('g1g');
+        const rect = canvasB.getBoundingClientRect();
+        const x = e.clientX - rect.left; // Adjust for canvas position
+        const y = e.clientY - rect.top;   // Adjust for canvas position
+        console.log(x);
+        // Check if the game is over and the click is within the restart button area
+        if (gameStatus === statusEnd && x > 140 && x < 360 && y > 520 && y < 580) {
+            // Restart the game logic
+            console.log('gg');
+        }
 			// var x = e.clientX;
 			// var y = e.clientY;
 		    // if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
@@ -186,11 +196,13 @@ function render() {
 function update(mod) {
     // if(game == 1){
     if (37 in keysDown && player.x >= 0 && player.x < (canvasB.width-40) ) {
+        alert(1);
         player.x -= player.speed * mod;
         player.state = 1;
         if(player.x <= 0) player.x = 1;
     }
     else if (39 in keysDown && player.x >= 0 && player.x < (canvasB.width-40)) {
+        alert(2);
         player.x += player.speed * mod;
         player.state = 2;
         if(player.x >= (canvasB.width-40) ) player.x = canvasB.width-41;
