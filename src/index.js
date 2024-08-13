@@ -202,7 +202,6 @@ function update(mod) {
         if(player.x <= 0) player.x = 1;
     }
     else if (39 in keysDown && player.x >= 0 && player.x < (canvasB.width-40)) {
-        alert(2);
         player.x += player.speed * mod;
         player.state = 2;
         if(player.x >= (canvasB.width-40) ) player.x = canvasB.width-41;
