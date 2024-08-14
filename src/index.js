@@ -79,39 +79,58 @@ function render() {
     //         //alert(touches.pageX);
     //     });	
 
-    canvasB.addEventListener('mousedown ', mouseDown, false);
+    // canvasB.addEventListener('mousedown ', mouseDown, false);
 
-	function mouseDown() {
-        console.log('g1g');
-        const rect = canvasB.getBoundingClientRect();
-        const x = e.clientX - rect.left; // Adjust for canvas position
-        const y = e.clientY - rect.top;   // Adjust for canvas position
-        console.log(x);
-        // Check if the game is over and the click is within the restart button area
-        if (gameStatus === statusEnd && x > 140 && x < 360 && y > 520 && y < 580) {
-            // Restart the game logic
-            console.log('gg');
-        }
-			// var x = e.clientX;
-			// var y = e.clientY;
-		    // if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
-			// 	flag3 =0;
-			// 	player =0;
-			// 	win =0;
-			// 	end = 0;		
-			// 	player.x= 200;
-			// 	player.y= 300;
-			// 	player.life=fulllife;
-			// 	player.recondFloor=0;
-			// 	player.state=0;
-			// 	recondFloor  =0;
-			// 	mouse = 0;
-			// 	game = 0;
-			// 	start = 1;
-			// 	player.speed = 250;
-			// 	speed = 5;	
-			// }		
-	}
+	// function mouseDown(e) {
+    //     console.log('g1g');
+    //     const rect = canvasB.getBoundingClientRect();
+    //     const x = e.clientX - rect.left; // Adjust for canvas position
+    //     const y = e.clientY - rect.top;   // Adjust for canvas position
+    //     console.log(x);
+    //     // Check if the game is over and the click is within the restart button area
+    //     if (gameStatus === statusEnd && x > 140 && x < 360 && y > 520 && y < 580) {
+    //         // Restart the game logic
+    //         console.log('gg');
+    //     }
+	// 		// var x = e.clientX;
+	// 		// var y = e.clientY;
+	// 	    // if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
+	// 		// 	flag3 =0;
+	// 		// 	player =0;
+	// 		// 	win =0;
+	// 		// 	end = 0;		
+	// 		// 	player.x= 200;
+	// 		// 	player.y= 300;
+	// 		// 	player.life=fulllife;
+	// 		// 	player.recondFloor=0;
+	// 		// 	player.state=0;
+	// 		// 	recondFloor  =0;
+	// 		// 	mouse = 0;
+	// 		// 	game = 0;
+	// 		// 	start = 1;
+	// 		// 	player.speed = 250;
+	// 		// 	speed = 5;	
+	// 		// }		
+	// }
+
+    const restartButton = document.getElementById('restartButton');
+    restartButton.addEventListener('click', restartGame);
+    
+    function restartGame() {
+        console.log('Restarting game...');
+        // Reset all game variables and states
+        gameStatus = statusStart;
+        endStatus = false;
+        player = new PlayerObj();
+        recondFloor = 0;
+    
+        // Hide the restart button
+        restartButton.style.display = 'none';
+    
+        // Restart the game loop if necessary
+        // (Optional, depending on your game logic)
+    }
+
 
     if(gameStatus == statusStart ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
@@ -166,6 +185,8 @@ function render() {
         ctxB.lineWidth = 2;
         ctxB.strokeStyle = "#8A0808";
         ctxB.strokeText("restart", 170, 560);
+
+        restartButton.style.display = 'block';
     }
     else{ 
         player.recondFloor = Math.floor(recondFloor/70);

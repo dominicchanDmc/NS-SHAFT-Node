@@ -7,3 +7,19 @@
                         left:520px;top:10px;position:fixed;z-index:1;
     					border: 4px solid blue; }		
 
+#restartButton {
+    position: absolute;
+    left: 140px; 
+    top: 520px;  
+    width: 200px;
+    height: 50px;
+    background-color: #FFA500;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+}
+
+#restartButton:hover {
+    background-color: #FF4500; 
+}
