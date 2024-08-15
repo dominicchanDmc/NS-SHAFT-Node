@@ -118,17 +118,13 @@ function render() {
     
     function restartGame() {
         console.log('Restarting game...');
-        // Reset all game variables and states
         gameStatus = statusStart;
         endStatus = false;
         player = new PlayerObj();
         recondFloor = 0;
     
-        // Hide the restart button
         restartButton.style.display = 'none';
-    
-        // Restart the game loop if necessary
-        // (Optional, depending on your game logic)
+
     }
 
 
@@ -186,7 +182,7 @@ function render() {
         ctxB.strokeStyle = "#8A0808";
         ctxB.strokeText("restart", 170, 560);
 
-        restartButton.style.display = 'block';
+         restartButton.style.display = 'block';
     }
     else{ 
         player.recondFloor = Math.floor(recondFloor/70);
