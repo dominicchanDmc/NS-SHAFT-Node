@@ -170,17 +170,17 @@ function render() {
         ctxB.strokeText("Game Over", 70, 100);
         player.life = 0;
         ctxB.drawImage(gameOverPic,100, 200, 280,280);
-        ctxB.fillStyle = "#FFA500";
-        ctxB.fillRect(140,520,200,50);
-        ctxB.lineWidth = 4;
-        ctxB.strokeStyle = "#8A0808";
-        ctxB.strokeRect(140,520,200,50);
-        ctxB.font = "40px Verdana";
-        ctxB.fillStyle = "#FFA500";
-        ctxB.fillText("restart", 170, 560);
-        ctxB.lineWidth = 2;
-        ctxB.strokeStyle = "#8A0808";
-        ctxB.strokeText("restart", 170, 560);
+        // ctxB.fillStyle = "#FFA500";
+        // ctxB.fillRect(140,520,200,50);
+        // ctxB.lineWidth = 4;
+        // ctxB.strokeStyle = "#8A0808";
+        // ctxB.strokeRect(140,520,200,50);
+        // ctxB.font = "40px Verdana";
+        // ctxB.fillStyle = "#FFA500";
+        // ctxB.fillText("restart", 170, 560);
+        // ctxB.lineWidth = 2;
+        // ctxB.strokeStyle = "#8A0808";
+        // ctxB.strokeText("restart", 170, 560);
 
          restartButton.style.display = 'block';
     }
