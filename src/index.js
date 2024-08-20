@@ -117,6 +117,7 @@ function render() {
     restartButton.addEventListener('click', restartGame);
     
     function restartGame() {
+        alert(test);
         console.log('Restarting game...');
         gameStatus = statusStart;
         endStatus = false;
@@ -213,7 +214,6 @@ function render() {
 function update(mod) {
     // if(game == 1){
     if (37 in keysDown && player.x >= 0 && player.x < (canvasB.width-40) ) {
-        alert(1);
         player.x -= player.speed * mod;
         player.state = 1;
         if(player.x <= 0) player.x = 1;
