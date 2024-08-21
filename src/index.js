@@ -41,6 +41,26 @@ let ms = 250;
 let recondFloor = 0;
 
 //-------------------------
+function restartGame() {
+    console.log('Restarting game...');
+    gameStatus = statusStart;
+    endStatus = false;
+    player = new PlayerObj();
+    recondFloor = 0;
+
+    restartButton.style.display = 'none';
+
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const restartButton = document.getElementById('restartButton');
+    if (restartButton) {
+        restartButton.addEventListener('click', restartGame);
+        console.log("Restart button listener attached");
+    } else {
+        console.log("Restart button not found in DOM");
+    }
+});
+
 function render() {
     canvasB = document.getElementById('canvasBoard');
     ctxB = canvasB.getContext('2d');
@@ -113,21 +133,8 @@ function render() {
 	// 		// }		
 	// }
 
-    const restartButton = document.getElementById('restartButton');
-    restartButton.addEventListener('click', restartGame);
-    
-    function restartGame() {
-        alert(test);
-        console.log('Restarting game...');
-        gameStatus = statusStart;
-        endStatus = false;
-        player = new PlayerObj();
-        recondFloor = 0;
-    
-        restartButton.style.display = 'none';
-
-    }
-
+    // const restartButton = document.getElementById('restartButton');
+    // restartButton.addEventListener('click', restartGame);
 
     if(gameStatus == statusStart ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
@@ -310,6 +317,8 @@ function run() {
     render();
     time = Date.now();
 }
+
+
 
 var time = Date.now();
 setInterval(run, 35);
