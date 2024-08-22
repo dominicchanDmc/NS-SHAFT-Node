@@ -164,12 +164,12 @@ function render() {
         recondFloor++;
     }
     else if( (gameStatus == statusEnd) && endStatus){
-        ctxB.clearRect(0, 0, canvasM.width, canvasM.height);
-        let grd=ctxB.createLinearGradient(240,0,240,640);
+        ctxB.clearRect(0, 0, canvasB.width, canvasB.height);
+         let grd=ctxB.createLinearGradient(240,0,240,740);
         grd.addColorStop(0,"#eff2f7");
         grd.addColorStop(1,"#052459");
         ctxB.fillStyle=grd;
-        ctxB.fillRect(0,0,canvasM.width,canvasM.height);
+        ctxB.fillRect(0,0,canvasB.width,canvasB.height);
         ctxB.font = "60px Verdana";
         ctxB.fillStyle = "#FFA500";
         ctxB.fillText("Game Over", 70, 100);
