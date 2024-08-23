@@ -192,7 +192,7 @@ function render() {
 
          restartButton.style.display = 'block';
     }
-    else{ 
+
         player.recondFloor = Math.floor(recondFloor/70);
         ctxM.clearRect(0, 0,canvasM.width,canvasM.height);
         ctxM.font = "60px Verdana";
@@ -216,7 +216,7 @@ function render() {
         ctxM.strokeStyle = "#0EA418";
         if( localStorage.getItem('rec') == null) ctxM.strokeText("RECORD = 0" , 30, 220);
         else ctxM.strokeText("RECORD =" + localStorage.getItem('rec'), 30, 220);
-        }
+    
 }
 function update(mod) {
     // if(game == 1){
