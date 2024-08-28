@@ -21,13 +21,15 @@ class BlockZObj{
         this.z = [x,y];
     }
 
-    setZValue(a,b,speed,mod,size) {
+    setZValue(a,b,speed,mod,size,color) {
        this.x= a;
         this.y= b;
         this.speed = speed;
         this.mod= mod;
         this.z = [x,y];
         this.size = size;
+        this.color = color;
+        
     }
 
     
