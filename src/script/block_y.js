@@ -7,7 +7,7 @@ class BlockYObj{
         this.height= 300;
         this.mod = 0;
         this.color = '#198469';
-        this.z = [x,y];
+        
     }
 
     constructor(a,b,c,d) {
@@ -19,7 +19,7 @@ class BlockYObj{
         this.mode = c;
         this.action = d;
         this.color = '#198469';
-        this.z = [x,y];
+        
     }
 
     setYValue(a,b,speed,mod,size) {
