@@ -26,10 +26,8 @@ class BlockZObj{
         this.y= b;
         this.speed = speed;
         this.mod= mod;
-        this.z = [x,y];
         this.size = size;
         this.color = color;
-        
     }
 
     
