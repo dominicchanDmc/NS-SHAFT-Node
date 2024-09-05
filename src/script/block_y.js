@@ -10,14 +10,14 @@ class BlockYObj{
         
     }
 
-    constructor(a,b,c,d) {
+    constructor(a,b,c,d,action) {
         this.x= a;
         this.y= b;
         this.width= 400;
         this.height= 400;
         this.mod = 0;
         this.mode = c;
-        this.action = d;
+        this.action = action;
         this.color = '#199699';
         
     }
