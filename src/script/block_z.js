@@ -9,14 +9,13 @@ class BlockZObj{
         this.z = [x,y];
     }
 
-    constructor(a,b,c,action) {
+    constructor(a,b,c) {
         this.x= a;
         this.y= b;
         this.width= 300;
         this.height= 300;
         this.mod = 0;
         this.mode = c;
-        this.action = action;
         this.color = '#198e99';
         this.z = [x,y];
     }
