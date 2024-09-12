@@ -22,7 +22,7 @@ class BlockXObj{
         this.z = [x,y];
     }
 
-    setZValue(a,b,speed,mod,size) {
+    setXValue(a,b,speed,mod,size) {
        this.x= a;
         this.y= b;
         this.speed = speed;
