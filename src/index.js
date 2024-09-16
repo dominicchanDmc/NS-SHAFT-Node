@@ -83,58 +83,6 @@ function render() {
             touches = e.touches[0];
           // tou = 1;
         });
-    // canvasB.addEventListener("touchmove", function (e) {
-    //         var t = e.touches[0];
-    //         alert(touches.pageX);
-    //         if (t.pageX < touches.pageX && player.x > 0 && player.x < 560) {
-    //             player.x -= player.speed * 0.015;
-    //             player.state = 1;
-    //             if(player.x <= 0) player.x = 1;
-    //         }
-    //         else if (t.pageX > touches.pageX && player.x > 0 && player.x < 560) {
-    //             player.x += player.speed * 0.015;
-    //             player.state = 2;
-    //             if(player.x >= 560) player.x = canvasB.width-41;
-    //         }else player.state = 0;
-    //         //alert(touches.pageX);
-    //     });	
-
-    // canvasB.addEventListener('mousedown ', mouseDown, false);
-
-	// function mouseDown(e) {
-    //     console.log('g1g');
-    //     const rect = canvasB.getBoundingClientRect();
-    //     const x = e.clientX - rect.left; // Adjust for canvas position
-    //     const y = e.clientY - rect.top;   // Adjust for canvas position
-    //     console.log(x);
-    //     // Check if the game is over and the click is within the restart button area
-    //     if (gameStatus === statusEnd && x > 140 && x < 360 && y > 520 && y < 580) {
-    //         // Restart the game logic
-    //         console.log('gg');
-    //     }
-	// 		// var x = e.clientX;
-	// 		// var y = e.clientY;
-	// 	    // if (end == 1 && (game == 0 || game == 2 )&& x > 140 && x < 360 && y>520 &&y<580) { //restart
-	// 		// 	flag3 =0;
-	// 		// 	player =0;
-	// 		// 	win =0;
-	// 		// 	end = 0;		
-	// 		// 	player.x= 200;
-	// 		// 	player.y= 300;
-	// 		// 	player.life=fulllife;
-	// 		// 	player.recondFloor=0;
-	// 		// 	player.state=0;
-	// 		// 	recondFloor  =0;
-	// 		// 	mouse = 0;
-	// 		// 	game = 0;
-	// 		// 	start = 1;
-	// 		// 	player.speed = 250;
-	// 		// 	speed = 5;	
-	// 		// }		
-	// }
-
-    // const restartButton = document.getElementById('restartButton');
-    // restartButton.addEventListener('click', restartGame);
 
     if(gameStatus == statusStart ){
         ctxB.drawImage(bgpic,0,0,canvasB.width,canvasB.height);
