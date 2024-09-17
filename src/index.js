@@ -68,7 +68,7 @@ function render() {
     ctxM = canvasM.getContext('2d');
     canvasB.width = 480;
     canvasB.height = 740;
-    canvasM.width = 480;
+    canvasM.width = 600;
     canvasM.height = 300;
 
     
