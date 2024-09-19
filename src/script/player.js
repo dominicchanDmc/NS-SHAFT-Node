@@ -12,6 +12,7 @@ class PlayerObj{
         this.recondFloor=0;      
         this.state=0;
         this.color= '#FF8000';
+        this.fullLife= 10;
     }
 } 
 

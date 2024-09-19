@@ -199,11 +199,9 @@ function update(mod) {
             // if(flag == 0)player.life -= 5;
             // flag = 1;
             player.speed = ms;
-        }else if(BlockArray[m_y].mod == 3){
-            // if(flag == 0 &&player.life< fulllife ) player.life++;
+        }else if(BlockArray[m_y].mod == 3 || BlockArray[m_y].mod == 9){
             player.speed = ms*1.5;
-            player.y -= 100;
-            // flag = 1;
+            player.y -= 70;
         }
         else {
             // if(flag == 0 &&player.life< fulllife ) player.life++;
