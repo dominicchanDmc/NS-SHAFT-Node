@@ -145,25 +145,25 @@ function render() {
         ctxM.clearRect(0, 0,canvasM.width,canvasM.height);
         ctxM.font = "60px Verdana";
         ctxM.fillStyle = "#F7A619";
-        ctxM.fillText("LIFE = " + player.life, 30, 80);
+        ctxM.fillText("Life = " + player.life, 30, 80);
         ctxM.lineWidth = 2;
         ctxM.strokeStyle = "#0EA418";
-        ctxM.strokeText("LIFE = " + player.life, 30, 80);
+        ctxM.strokeText("Life = " + player.life, 30, 80);
         ctxM.font = "60px Verdana";
         ctxM.fillStyle = "#F7A619";
-        ctxM.fillText("RecondFloor = " + player.recondFloor, 30, 150);
+        ctxM.fillText("Recond Floor = " + player.recondFloor, 30, 150);
         ctxM.lineWidth = 2;
         ctxM.strokeStyle = "#0EA418";
-        ctxM.strokeText("RecondFloor = " + player.recondFloor, 30, 150);
+        ctxM.strokeText("Recond Floor = " + player.recondFloor, 30, 150);
         if(localStorage.getItem('rec') < player.recondFloor && endStatus) localStorage['rec'] = player.recondFloor;
         ctxM.font = "60px Verdana";
         ctxM.fillStyle = "#F7A619";
-        if( localStorage.getItem('rec') == null) ctxM.fillText("RECORD = 0" , 30, 220);
-        else ctxM.fillText("RECORD =" + localStorage.getItem('rec'), 30, 220);
+        if( localStorage.getItem('rec') == null) ctxM.fillText("Recond = 0" , 30, 220);
+        else ctxM.fillText("Recond =" + localStorage.getItem('rec'), 30, 220);
         ctxM.lineWidth = 2;
         ctxM.strokeStyle = "#0EA418";
-        if( localStorage.getItem('rec') == null) ctxM.strokeText("RECORD = 0" , 30, 220);
-        else ctxM.strokeText("RECORD =" + localStorage.getItem('rec'), 30, 220);
+        if( localStorage.getItem('rec') == null) ctxM.strokeText("Recond = 0" , 30, 220);
+        else ctxM.strokeText("Recond =" + localStorage.getItem('rec'), 30, 220);
     
 }
 function update(mod) {
