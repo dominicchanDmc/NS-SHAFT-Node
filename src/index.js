@@ -33,7 +33,7 @@ let endStatus = false;
 let player = new PlayerObj();
 let keysDown = {};
 let speed = 7; 
-let up = 0,up2=0;
+let up = 0,up2=0,hitBlock = 0;
 let down = 1,down2 = 1; 
 let m_y = 0,m_y2 = 0,flag3 = 0;
 let leftMove = 0 ,rightMove = 0,r = 0;
@@ -195,11 +195,13 @@ function update(mod) {
             // if(flag == 0 &&player.life< fulllife ) player.life++;
             // flag = 1;
             player.speed=ms/3;
-        }else if (BlockArray[m_y].mod == 2){
-            // if(flag == 0)player.life -= 5;
-            // flag = 1;
+        }else if (hitBlock==0 && 
+            (BlockArray[m_y].mod == 2 || BlockArray[m_y].mod == 7)){
+
+            if(player.life< player.fullLife) player.life--;
             player.speed = ms;
-        }else if(BlockArray[m_y].mod == 3 || BlockArray[m_y].mod == 9){
+            hitBlock = 1;
+        }else if(BlockArray[m_y].mod == 3 || BlockArray[m_y].mod == 9){ //J_block
             player.speed = ms*1.5;
             player.y -= 70;
         }
@@ -217,7 +219,7 @@ function update(mod) {
         }
         player.y += 10;
         player.speed =ms;
-        // flag = 0;
+        hitBlock = 0;
     }
     if(canvasB!=undefined && (player.y > canvasB.height || player.life <=0)) {
         gameStatus = statusEnd;
