@@ -2,6 +2,7 @@ import PlayerObj from "./script/player.js"
 import BlockObj from "./script/block.js";
 import J_BlockObj from "./script/j_Block.js";
 import D_BlockObj from "./script/d_Block.js";
+import L_BlockObj from "./script/l_Block.js";
 
 //--------param
 const statusStart = 'Start';
@@ -20,6 +21,8 @@ const j_blockPic=new Image();
 		j_blockPic.src="./assets/jblock.jpg";
 const d_blockPic=new Image();
         d_blockPic.src="./assets/dblock.jpg";
+const l_blockPic=new Image();
+        l_blockPic.src="./assets/leftBlock.jpg";
 const leftpic=new Image();
 		leftpic.src="./assets/left.png";
 const rightpic=new Image();
