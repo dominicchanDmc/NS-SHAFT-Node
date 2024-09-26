@@ -200,7 +200,7 @@ function update(mod) {
             // flag = 1;
             player.speed=ms/3;
         }else if (hitBlock==0 && 
-            (BlockArray[m_y].mod == 3 || BlockArray[m_y].mod == )){
+            (BlockArray[m_y].mod == 3 || BlockArray[m_y].mod == 9)){
 
             if(player.life< player.fullLife) player.life--;
             player.speed = ms;
