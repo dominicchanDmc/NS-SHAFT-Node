@@ -309,9 +309,14 @@ for( let i = 1 ; i < 10 ; i++){
         if(!overlap) break;
     }
     /////////////////////////////////////
-    if(i == 3 || i == 9 ) BlockArray[i] = new D_BlockObj(r,de);
-    else if ( i == 2 || i == 7) BlockArray[i] = new J_BlockObj(r,de);
+    // if(i == 3 || i == 9 ) BlockArray[i] = new D_BlockObj(r,de);
+    // else if ( i == 2 || i == 7) BlockArray[i] = new J_BlockObj(r,de);
+    // else if ( i == 5 ) BlockArray[i] = new BlockObj(r,de);
+    // else if ( i == 4 || i == 8) BlockArray[i] = new L_BlockObj(r,de);
+    // else BlockArray[i] = new BlockObj(r,de);
+    if(i == 3 ) BlockArray[i] = new D_BlockObj(r,de);
+    else if ( i == 2 ) BlockArray[i] = new J_BlockObj(r,de);
     else if ( i == 5 ) BlockArray[i] = new BlockObj(r,de);
-    else if ( i == 4 || i == 8) BlockArray[i] = new L_BlockObj(r,de);
+    else if ( i == 4 ) BlockArray[i] = new L_BlockObj(r,de);
     else BlockArray[i] = new BlockObj(r,de);
 }
