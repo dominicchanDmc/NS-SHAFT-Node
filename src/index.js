@@ -200,12 +200,12 @@ function update(mod) {
             // flag = 1;
             player.speed=ms/3;
         }else if (hitBlock==0 && 
-            (BlockArray[m_y].mod == 3 || BlockArray[m_y].mod == 9)){
+            (BlockArray[m_y].mod == 3)){
 
             if(player.life< player.fullLife) player.life--;
             player.speed = ms;
             hitBlock = 1;
-        }else if(BlockArray[m_y].mod == 2 || BlockArray[m_y].mod == 7){ //J_block
+        }else if(BlockArray[m_y].mod == 2){ //J_block
             player.speed = ms*1.5;
             player.y -= 70;
         }
