@@ -5,6 +5,7 @@ class D_BlockObj{
         this.width= 150;
         this.height= 30;
         this.mod = 2;
+        this.modSecond = 4;
         this.color = '#f70519';
     }
 };
