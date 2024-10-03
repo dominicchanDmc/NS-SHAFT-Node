@@ -5,6 +5,7 @@ class J_BlockObj{
         this.width= 130;
         this.height= 30;
         this.mod = 3;
+        this.modSecond = 6;
         this.color = '#FFFF00';
     }
 };
