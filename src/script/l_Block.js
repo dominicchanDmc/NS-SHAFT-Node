@@ -5,6 +5,7 @@ class L_BlockObj{
         this.width= 130;
         this.height= 30;
         this.mod = 1;
+        this.modSecond = 9;
         this.color = '#FFFF00';
     }
 };
