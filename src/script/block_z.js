@@ -15,6 +15,7 @@ class BlockZObj{
         this.width= 300;
         this.height= 300;
         this.mod = 0;
+        this.mo2 = 10;
         this.mode = c;
         this.color = '#146e59';
         this.z = [x,y];
@@ -24,6 +25,7 @@ class BlockZObj{
        this.x= a;
         this.y= b;
         this.speed = speed;
+        this.mod= mod;
         this.mod= mod;
         this.size = size;
         this.color = color;
