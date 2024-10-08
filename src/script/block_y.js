@@ -16,6 +16,7 @@ class BlockYObj{
         this.width= 400;
         this.height= 400;
         this.mod = 0;
+        this.mo2 = 7;
         this.mode = c;
         this.action = action;
         this.color = '#148999';
