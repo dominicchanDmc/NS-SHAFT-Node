@@ -6,6 +6,7 @@ class BlockYObj{
         this.width= 300;
         this.height= 300;
         this.mod = 0;
+        this.mo2 = 7;
         this.color = '#148999';
         
     }
