@@ -106,7 +106,7 @@ function render() {
             if(BlockArray[i].mod == 0) ctxB.drawImage(blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else if  (BlockArray[i].mod == 1) ctxB.drawImage(l_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else if  (BlockArray[i].mod == 3||BlockArray[i].mod == 9) ctxB.drawImage(d_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
-            else if  (BlockArray[i].mod == 2||BlockArray[i].mod == 7) ctxB.drawImage(j_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
+            else if  (BlockArray[i].mod == 2||BlockArray[i].mod == 4) ctxB.drawImage(j_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             // else if  (BlockArray[i].mod == 4||BlockArray[i].mod == 8) ctxB.drawImage(l_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else{
                 ctxB.fillStyle = BlockArray[i].color;
@@ -315,8 +315,8 @@ for( let i = 1 ; i < 10 ; i++){
     // else if ( i == 4 || i == 8) BlockArray[i] = new L_BlockObj(r,de);
     // else BlockArray[i] = new BlockObj(r,de);
     if(i == 3 ) BlockArray[i] = new D_BlockObj(r,de);
-    else if ( i == 2 ) BlockArray[i] = new J_BlockObj(r,de);
+    else if ( i == 2 || i == 4) BlockArray[i] = new J_BlockObj(r,de);
     else if ( i == 5 ) BlockArray[i] = new BlockObj(r,de);
-    else if ( i == 4 ) BlockArray[i] = new L_BlockObj(r,de);
+    else if ( i == 1 ) BlockArray[i] = new L_BlockObj(r,de);
     else BlockArray[i] = new BlockObj(r,de);
 }
