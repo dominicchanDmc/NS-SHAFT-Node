@@ -104,7 +104,7 @@ function render() {
         ctxB.drawImage(toppic,0,0,canvasB.width,40);
         for(let i = 0 ; i < 10 ; i++){
             if(BlockArray[i].mod == 0) ctxB.drawImage(blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
-            else if  (BlockArray[i].mod == 1) ctxB.drawImage(l_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
+            else if  (BlockArray[i].mod == 1||BlockArray[i].mod == 5) ctxB.drawImage(l_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else if  (BlockArray[i].mod == 3||BlockArray[i].mod == 9) ctxB.drawImage(d_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             else if  (BlockArray[i].mod == 2||BlockArray[i].mod == 4) ctxB.drawImage(j_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
             // else if  (BlockArray[i].mod == 4||BlockArray[i].mod == 8) ctxB.drawImage(l_blockPic,BlockArray[i].x, BlockArray[i].y, BlockArray[i].width, BlockArray[i].height);
@@ -317,6 +317,6 @@ for( let i = 1 ; i < 10 ; i++){
     if(i == 3 || i == 9) BlockArray[i] = new D_BlockObj(r,de);
     else if ( i == 2 || i == 4) BlockArray[i] = new J_BlockObj(r,de);
     else if ( i == 0 ) BlockArray[i] = new BlockObj(r,de);
-    else if ( i == 1 ) BlockArray[i] = new L_BlockObj(r,de);
+    else if ( i == 1 || i == 5) BlockArray[i] = new L_BlockObj(r,de);
     else BlockArray[i] = new BlockObj(r,de);
 }
