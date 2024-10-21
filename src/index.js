@@ -318,5 +318,5 @@ for( let i = 1 ; i < 10 ; i++){
     else if ( i == 2 || i == 4) BlockArray[i] = new J_BlockObj(r,de);
     else if ( i == 0 ) BlockArray[i] = new BlockObj(r,de);
     else if ( i == 1 || i == 5) BlockArray[i] = new L_BlockObj(r,de);
-    else BlockArray[i] = new BlockObj(r,de);
+    else BlockArray[i] = new BlockObj(r,de); 
 }
