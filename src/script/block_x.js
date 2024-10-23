@@ -5,8 +5,8 @@ class BlockXObj{
         this.y= b;
         this.width= 300;
         this.height= 300;
-        this.mod = 0;
-        this.mo2 = 8;
+        this.mod = 1;
+        this.mo2 = 5;
         this.color = '#198e99';
         this.z = [x,y];
     }
